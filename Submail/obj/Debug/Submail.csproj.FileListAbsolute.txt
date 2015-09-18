@@ -3,3 +3,4 @@ c:\users\guizha\documents\visual studio 2013\Projects\Submail\Submail\bin\Debug\
 c:\users\guizha\documents\visual studio 2013\Projects\Submail\Submail\bin\Debug\Newtonsoft.Json.dll
 c:\users\guizha\documents\visual studio 2013\Projects\Submail\Submail\obj\Debug\Submail.dll
 c:\users\guizha\documents\visual studio 2013\Projects\Submail\Submail\obj\Debug\Submail.pdb
+c:\users\guizha\documents\visual studio 2013\Projects\Submail\Submail\obj\Debug\Submail.csprojResolveAssemblyReference.cache

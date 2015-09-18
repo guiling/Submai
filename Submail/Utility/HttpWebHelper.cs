@@ -44,6 +44,17 @@ namespace Submail.Utility
             return null;
         }
 
+        public static bool CheckReturnJsonStatus(string retrunJsonResult)
+        {
+            Dictionary<string, string> jsonMap = JsonConvert.DeserializeObject<Dictionary<string, string>>(retrunJsonResult);
+            if (jsonMap.ContainsKey("status") && jsonMap["status"].Equals("success", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public string HttpPost(string httpUrl, Dictionary<string, object> dataPair)
         {
             using (HttpClient httpClient = new HttpClient())
