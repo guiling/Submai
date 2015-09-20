@@ -56,6 +56,7 @@
     <Compile Include="Lib\MailXSend.cs" />
     <Compile Include="Lib\Message.cs" />
     <Compile Include="AppConfig\MessageConfig.cs" />
+    <Compile Include="Lib\MessageMultiXSend.cs" />
     <Compile Include="Lib\MessageXSend.cs" />
     <Compile Include="Lib\SendBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

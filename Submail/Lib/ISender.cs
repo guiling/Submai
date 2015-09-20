@@ -21,6 +21,8 @@ namespace Submail.Lib
 
         bool XSend(Dictionary<string, object> data, out string returnMessage);
 
+        bool MultiXSend(Dictionary<string, object> data, out string returnMessage);
+
         bool Subscribe(Dictionary<string, object> data, out string returnMessage);
 
         bool UnSubscribe(Dictionary<string, object> data, out string returnMessage);

@@ -17,6 +17,9 @@ namespace SubMailTest
 
             //MessageSendXDemo messageSendXDemo = new MessageSendXDemo();
             //messageSendXDemo.SendMessage();
+
+            MessageMultiXSendDemo messageMultiXSendDemo = new MessageMultiXSendDemo();
+            messageMultiXSendDemo.SendMultiMessage();
         }
     }
 }

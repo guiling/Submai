@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Submail.AppConfig;
 using System.IO;
 using System.Net.Http.Headers;
+using Newtonsoft.Json.Linq;
 
 namespace Submail.Utility
 {
@@ -53,6 +54,22 @@ namespace Submail.Utility
             }
 
             return false;
+        }
+
+        public static bool CheckMultiReturnJsonStatus(string returnJsonResult)
+        {
+            JArray jarray = JArray.Parse(returnJsonResult);
+            bool isAllSuccess = true;
+            foreach (var item in jarray.Children())
+            {
+                if (CheckReturnJsonStatus(item.ToString()) == false)
+                {
+                    isAllSuccess = false;
+                    break;
+                }
+            }
+
+            return isAllSuccess;
         }
 
         public string HttpPost(string httpUrl, Dictionary<string, object> dataPair)

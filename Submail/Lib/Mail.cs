@@ -52,5 +52,10 @@ namespace Submail.Lib
             returnMessage = retrunJsonResult;
             return HttpWebHelper.CheckReturnJsonStatus(retrunJsonResult);
         }
+
+        public bool MultiXSend(Dictionary<string, object> data, out string returnMessage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

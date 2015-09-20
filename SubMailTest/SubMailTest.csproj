@@ -48,6 +48,7 @@
     <Compile Include="AddressBookMessageDemo.cs" />
     <Compile Include="MailSendDemo.cs" />
     <Compile Include="MailSendXDemo.cs" />
+    <Compile Include="MessageMultiXSendDemo.cs" />
     <Compile Include="MessageSendXDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
