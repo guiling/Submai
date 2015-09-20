@@ -30,13 +30,7 @@ namespace Submail.Lib
 
         public void SetMulti(List<MultiMessageItem> multiItems)
         {
-            JArray jArray = new JArray();
-            foreach (var item in multiItems)
-            {
-                jArray.Add(item.ToString());
-            }
-
-            this._dataPair.Add(MULTI, jArray.ToString());
+            this._dataPair.Add(MULTI, JsonConvert.SerializeObject(multiItems));
         }
 
         public bool MultiXSend(out string returnMessage)
@@ -47,28 +41,13 @@ namespace Submail.Lib
 
     public class MultiMessageItem
     {
-        public const string TO = "to";
-        public const string VARS = "vars";
-
-        public override string ToString()
-        {
-            Dictionary<string, string> map = new Dictionary<string, string>();
-            map.Add(TO, this.To);
-            if (this.Vars != null && this.Vars.Count > 0)
-            {
-                map.Add(VARS, JsonConvert.SerializeObject(this.Vars));
-            }
-
-            return JsonConvert.SerializeObject(map);
-        }
-
         public MultiMessageItem()
         {
-            Vars = new Dictionary<string, string>();
+            vars = new Dictionary<string, string>();
         }
 
-        public string To { get; set; }
+        public string to { get; set; }
 
-        public Dictionary<string, string> Vars { get; set; }
+        public Dictionary<string, string> vars { get; set; }
     }
 }

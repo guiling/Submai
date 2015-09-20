@@ -16,3 +16,12 @@ C:\Users\guizha\Submail\SubMailTest\bin\Debug\SubMailTest.pdb
 C:\Users\guizha\Submail\SubMailTest\bin\Debug\Submail.dll
 C:\Users\guizha\Submail\SubMailTest\bin\Debug\Newtonsoft.Json.dll
 C:\Users\guizha\Submail\SubMailTest\bin\Debug\Submail.pdb
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\SubMailTest.exe.config
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\obj\Debug\SubMailTest.exe
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\obj\Debug\SubMailTest.pdb
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\SubMailTest.exe
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\SubMailTest.pdb
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\Submail.dll
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\bin\Debug\Submail.pdb
+C:\Users\guizha\Submail\SubMail2\Submail\SubMailTest\obj\Debug\SubMailTest.csprojResolveAssemblyReference.cache
