@@ -116,7 +116,7 @@ namespace Submail.Lib
             if (jsonMap != null)
             {
                 jsonMap.Add(jKey, jValue);
-                this._dataPair.Add(key, JsonConvert.SerializeObject(jsonMap));
+                this._dataPair[key] = JsonConvert.SerializeObject(jsonMap);
             }
         }
     }

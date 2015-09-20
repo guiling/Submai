@@ -26,21 +26,19 @@ namespace Submail.Lib
             _dataPair.Add(ADDRESS, string.Format("{0}<{1}>", name, address));
         }
 
-
         public void SetAddressBook(string target)
         {
             _dataPair.Add(TARGET, target);
         }
 
-
-        public bool Subscribe()
+        public bool Subscribe(out string returnMessage)
         {
-            return GetSender().Subscribe(_dataPair);
+            return GetSender().Subscribe(_dataPair, out returnMessage);
         }
 
-        public bool UnSubscribe()
+        public bool UnSubscribe(out string returnMessage)
         {
-            return GetSender().UnSubscribe(_dataPair);
+            return GetSender().UnSubscribe(_dataPair, out returnMessage);
         }
     }
 }

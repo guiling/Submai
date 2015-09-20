@@ -17,12 +17,12 @@ namespace Submail.Lib
 	     * </p>
 	     * @return If send successfully,return true.Error occurs,return false.
 	     **/
-        bool Send(Dictionary<string, object> data);
+        bool Send(Dictionary<string, object> data, out string returnMessage);
 
-        bool XSend(Dictionary<string, object> data);
+        bool XSend(Dictionary<string, object> data, out string returnMessage);
 
-        bool Subscribe(Dictionary<string, object> data);
+        bool Subscribe(Dictionary<string, object> data, out string returnMessage);
 
-        bool UnSubscribe(Dictionary<string, object> data);
+        bool UnSubscribe(Dictionary<string, object> data, out string returnMessage);
     }
 }

@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressBookMailDemo.cs" />
+    <Compile Include="AddressBookMessageDemo.cs" />
+    <Compile Include="MailSendDemo.cs" />
+    <Compile Include="MailSendXDemo.cs" />
+    <Compile Include="MessageSendXDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

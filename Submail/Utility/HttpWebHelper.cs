@@ -74,10 +74,6 @@ namespace Submail.Utility
         {
             MultipartFormDataContent multipart = new MultipartFormDataContent();
             string timeStamp = this.GetTimeStamp();
-            multipart.Add(new StringContent(_appConfig.AppId), APPID);
-            multipart.Add(new StringContent(timeStamp), TIMESTAMP);
-            multipart.Add(new StringContent(_appConfig.SignType.ToString()), SIGN_TYPE);
-
             dataPair.Add(APPID, _appConfig.AppId);
             dataPair.Add(TIMESTAMP, timeStamp);
             dataPair.Add(SIGN_TYPE, _appConfig.SignType.ToString());
@@ -101,7 +97,9 @@ namespace Submail.Utility
                     var fileContent = new ByteArrayContent(System.IO.File.ReadAllBytes(file.FullName));
                     fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                     {
-                        FileName = file.Name
+                        FileName = file.Name,
+                        Name = key
+                        
                     };
 
                     multipart.Add(fileContent);

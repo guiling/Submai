@@ -36,7 +36,7 @@ namespace Submail.Lib
 
         public void AddTo(string address, string name)
         {
-            AddWithBracket(TO, address, name);
+            AddWithBracket(TO, name, address);
         }
 
         public void AddAddressBook(string addAddressBook)
@@ -100,9 +100,9 @@ namespace Submail.Lib
             this.AddWithJson(HEADERS, key, val);
         }
 
-        public void Send()
+        public bool Send(out string returnMessage)
         {
-            GetSender().Send(_dataPair);
+            return GetSender().Send(_dataPair, out returnMessage);
         }
     }
 }

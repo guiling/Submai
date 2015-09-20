@@ -71,6 +71,5 @@ namespace Submail.Utility
 
             return sBuilder.ToString();
         }
-
     }
 }

@@ -12,7 +12,11 @@ namespace SubMailTest
     {
         static void Main(string[] args)
         {
-            Trace.WriteLine("a");
+            //MailSendDemo mailSendDemo = new MailSendDemo();
+            //mailSendDemo.SendMail();
+
+            //MessageSendXDemo messageSendXDemo = new MessageSendXDemo();
+            //messageSendXDemo.SendMessage();
         }
     }
 }

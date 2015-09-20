@@ -87,9 +87,9 @@ namespace Submail.Lib
             this.AddWithJson(HEADERS, key, val);
         }
 
-        public void XSend()
+        public bool XSend(out string returnMessage)
         {
-            this.GetSender().XSend(_dataPair);
+            return this.GetSender().XSend(_dataPair, out returnMessage);
         }
     }
 }

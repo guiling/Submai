@@ -23,28 +23,31 @@ namespace Submail.Lib
             this._httpWebHelper = new HttpWebHelper(_appConfig);
         }
 
-
-        public bool Send(Dictionary<string, object> data)
+        public bool Send(Dictionary<string, object> data, out string returnMessage)
         {
             string retrunJsonResult = _httpWebHelper.HttpPost(API_SEND, data);
+            returnMessage = retrunJsonResult;
             return HttpWebHelper.CheckReturnJsonStatus(retrunJsonResult);
         }
 
-        public bool XSend(Dictionary<string, object> data)
+        public bool XSend(Dictionary<string, object> data, out string returnMessage)
         {
             string retrunJsonResult = _httpWebHelper.HttpPost(API_XSEND, data);
+            returnMessage = retrunJsonResult;
             return HttpWebHelper.CheckReturnJsonStatus(retrunJsonResult);
         }
 
-        public bool Subscribe(Dictionary<string, object> data)
+        public bool Subscribe(Dictionary<string, object> data, out string returnMessage)
         {
             string retrunJsonResult = _httpWebHelper.HttpPost(API_SUBSCRIBE, data);
+            returnMessage = retrunJsonResult;
             return HttpWebHelper.CheckReturnJsonStatus(retrunJsonResult);
         }
 
-        public bool UnSubscribe(Dictionary<string, object> data)
+        public bool UnSubscribe(Dictionary<string, object> data, out string returnMessage)
         {
             string retrunJsonResult = _httpWebHelper.HttpPost(API_UNSUBSCRIBE, data);
+            returnMessage = retrunJsonResult;
             return HttpWebHelper.CheckReturnJsonStatus(retrunJsonResult);
         }
     }

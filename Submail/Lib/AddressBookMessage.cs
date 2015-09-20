@@ -31,15 +31,14 @@ namespace Submail.Lib
             _dataPair.Add(TARGET, target);
         }
 
-  
-        public bool Subscribe()
+        public bool Subscribe(out string returnMessage)
         {
-            return GetSender().Subscribe(_dataPair);
+            return GetSender().Subscribe(_dataPair, out returnMessage);
         }
 
-        public bool UnSubscribe()
+        public bool UnSubscribe(out string returnMessage)
         {
-            return GetSender().UnSubscribe(_dataPair);
+            return GetSender().UnSubscribe(_dataPair, out returnMessage);
         }
     }
 }
