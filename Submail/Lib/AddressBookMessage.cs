@@ -7,25 +7,19 @@ using System.Threading.Tasks;
 
 namespace Submail.Lib
 {
-    public class AddressBookMessage : ISenderFactory
+    public class AddressBookMessage : SendBase
     {
         private const string ADDRESS = "address";
         private const string TARGET = "target";
 
-        private IAppConfig _appConfig;
-
-        private Dictionary<string, object> _dataPair = new Dictionary<string, object>();
-
-        public AddressBookMessage(IAppConfig appConfig)
+        public AddressBookMessage(IAppConfig appConfig) : base(appConfig)
         {
-            _appConfig = appConfig;
-        }
+        }       
 
-        public ISender GetSender()
+        protected override ISender GetSender()
         {
             return new Message(_appConfig);
         }
-
 
         public void SetAddress(string address)
         {

@@ -7,21 +7,16 @@ using System.Threading.Tasks;
 
 namespace Submail.Lib
 {
-    public class AddressBookMail : ISenderFactory
+    public class AddressBookMail : SendBase
     {
         private const string ADDRESS = "address";
         private const string TARGET = "target";
 
-        private IAppConfig _appConfig;
-
-        private Dictionary<string, object> _dataPair = new Dictionary<string, object>();
-
-        public AddressBookMail(IAppConfig appConfig)
+        public AddressBookMail(IAppConfig appConfig) : base(appConfig)
         {
-            _appConfig = appConfig;
         }
 
-        public ISender GetSender()
+        protected override ISender GetSender()
         {
             return new Mail(_appConfig);
         }

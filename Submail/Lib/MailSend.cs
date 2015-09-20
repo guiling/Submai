@@ -1,13 +1,14 @@
 ﻿using Submail.AppConfig;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Submail.Lib
 {
-    public class MailSend : ISenderFactory
+    public class MailSend : SendBase
     {
         private const string TO = "to";
         private const string ADDRESSBOOK = "addressbook";
@@ -24,16 +25,84 @@ namespace Submail.Lib
         private const string ATTACHMENTS = "attachments";
         private const string HEADERS = "headers";
 
-        private IAppConfig _appConfig = null;
-
-        public MailSend(IAppConfig appConfig)
+        public MailSend(IAppConfig appConfig) : base(appConfig)
         {
-            _appConfig = appConfig;
         }
 
-        public ISender GetSender()
+        protected override ISender GetSender()
         {
             return new Mail(_appConfig);
+        }
+
+        public void AddTo(string address, string name)
+        {
+            AddWithBracket(TO, address, name);
+        }
+
+        public void AddAddressBook(string addAddressBook)
+        {
+            AddWithComma(ADDRESSBOOK, addAddressBook);
+        }
+
+        public void SetSender(string sender, string name)
+        {
+            this._dataPair.Add(FROM, sender);
+            this._dataPair.Add(FROM_NAME, name);
+        }
+
+        public void SetReply(string reply)
+        {
+            this._dataPair.Add(REPLY, reply);
+        }
+
+        public void AddCc(string address, string name)
+        {
+            this.AddWithBracket(CC, name, address);
+        }
+
+        public void AddBcc(string address, string name)
+        {
+            this.AddWithBracket(BCC, name, address);
+        }
+
+        public void SetSubject(string subject)
+        {
+            this._dataPair.Add(SUBJECT, subject);
+        }
+
+        public void SetText(string text)
+        {
+            this._dataPair.Add(TEXT, text);
+        }
+
+        public void SetHtml(string html)
+        {
+            this._dataPair.Add(HTML, html);
+        }
+
+        public void AddVar(string key, string val)
+        {
+            this.AddWithJson(VARS, key, val);
+        }
+
+        public void AddLink(string key, string val)
+        {
+            this.AddWithJson(LINKS, key, val);
+        }
+
+        public void AddAttachment(string file)
+        {
+            this.AddWithIncrease(ATTACHMENTS, new FileInfo(file));
+        }
+
+        public void AddHeaders(string key, string val)
+        {
+            this.AddWithJson(HEADERS, key, val);
+        }
+
+        public void Send()
+        {
+            GetSender().Send(_dataPair);
         }
     }
 }

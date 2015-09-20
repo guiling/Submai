@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Submail.Lib
 {
-    interface ISender
+    public interface ISender
     {
         /**
 	     * Send the request data.
