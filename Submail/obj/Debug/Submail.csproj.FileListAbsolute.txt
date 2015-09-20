@@ -15,3 +15,4 @@ C:\Users\guizha\Submail\SubMail2\Submail\Submail\bin\Debug\Submail.pdb
 C:\Users\guizha\Submail\SubMail2\Submail\Submail\bin\Debug\Newtonsoft.Json.dll
 C:\Users\guizha\Submail\SubMail2\Submail\Submail\obj\Debug\Submail.dll
 C:\Users\guizha\Submail\SubMail2\Submail\Submail\obj\Debug\Submail.pdb
+C:\Users\guizha\Submail\SubMail2\Submail\Submail\obj\Debug\Submail.csprojResolveAssemblyReference.cache

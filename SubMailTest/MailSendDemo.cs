@@ -22,6 +22,7 @@ namespace SubMailTest
             submail.SetSubject("发送历史与明细");
             submail.SetText("发送历史与明细");
             submail.AddAttachment(@"C:\attachment.txt");
+          
             string resultMessage = string.Empty ;
             if (submail.Send(out resultMessage)== false)
             {

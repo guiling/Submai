@@ -112,11 +112,11 @@ namespace Submail.Utility
                 if (file != null)
                 {
                     var fileContent = new ByteArrayContent(System.IO.File.ReadAllBytes(file.FullName));
-                    fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                    {
+                    fileContent.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data");
+                    fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+                    { 
                         FileName = file.Name,
-                        Name = key
-                        
+                        Name = key,
                     };
 
                     multipart.Add(fileContent);
