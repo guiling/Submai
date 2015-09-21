@@ -8,10 +8,14 @@ namespace Submail.Utility
 {
     public class RequestHelper
     {
+        // 将所有提交的参数升序排列：仅单次提交的参数，不包括 signature 字段升序（A-Z）排列
         public static string FormatRequest(Dictionary<string, object> data)
         {
             StringBuilder builder = new StringBuilder();
-            foreach (string key in data.Keys)
+            var list = data.Keys.ToList();
+            list.Sort();
+
+            foreach (string key in list)
             {
                 string value = data[key] as string;
                 if (value != null)

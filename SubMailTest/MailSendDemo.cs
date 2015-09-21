@@ -12,7 +12,7 @@ namespace SubMailTest
     {
         public void SendMail()
         {
-            IAppConfig mailConfig = new MailAppConfig("10050", "2be0927e1628e16e1ccdb6f5800caac9");
+            IAppConfig mailConfig = new MailAppConfig("10050", "2be0927e1628e16e1ccdb6f5800caac9",SignType.sha1);
             MailSend submail = new MailSend(mailConfig);
             submail.AddTo("zgl88161104@163.com", "joe");
             submail.AddCc("leo@submail.cn", "leo");
