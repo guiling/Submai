@@ -26,5 +26,7 @@ namespace Submail.Lib
         bool Subscribe(Dictionary<string, object> data, out string returnMessage);
 
         bool UnSubscribe(Dictionary<string, object> data, out string returnMessage);
+
+        bool VoiceVerify(Dictionary<string, object> data, out string returnMessage);
     }
 }

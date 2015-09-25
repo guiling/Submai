@@ -14,6 +14,7 @@ namespace Submail.Lib
         private const string API_MULTIXSEND = "https://api.submail.cn/message/multixsend.json";
         private const string API_SUBSCRIBE = "http://api.submail.cn/addressbook/message/subscribe.json";
         private const string API_UNSUBSCRIBE = "http://api.submail.cn/addressbook/message/unsubscribe.json";
+        private const string API_VOICEVERIFY = "https://api.submail.cn/voice/verify";
 
         private IAppConfig _appConfig;
         private HttpWebHelper _httpWebHelper;
@@ -57,6 +58,13 @@ namespace Submail.Lib
             string returnJsonResult = _httpWebHelper.HttpPost(API_MULTIXSEND, data);
             returnMessage = returnJsonResult;
             return HttpWebHelper.CheckMultiReturnJsonStatus(returnJsonResult);
+        }
+
+        public bool VoiceVerify(Dictionary<string, object> data, out string returnMessage)
+        {
+            string returnJsonResult = _httpWebHelper.HttpPost(API_VOICEVERIFY, data);
+            returnMessage = returnJsonResult;
+            return HttpWebHelper.CheckReturnJsonStatus(returnJsonResult);
         }
     }
 }

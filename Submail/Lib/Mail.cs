@@ -57,5 +57,10 @@ namespace Submail.Lib
         {
             throw new NotImplementedException();
         }
+
+        public bool VoiceVerify(Dictionary<string, object> data, out string returnMessage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
