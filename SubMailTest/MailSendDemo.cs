@@ -12,7 +12,7 @@ namespace SubMailTest
     {
         public void SendMail()
         {
-            IAppConfig mailConfig = new MailAppConfig("10050", "2be0927e1628e16e1ccdb6f5800caac9",SignType.sha1);
+            IAppConfig mailConfig = new MailAppConfig("10050", "2be0927e1628e16e1ccdb6f5800caac9",SignType.md5);
             MailSend submail = new MailSend(mailConfig);
             submail.AddTo("zgl88161104@163.com", "joe");
             submail.AddCc("leo@submail.cn", "leo");
@@ -22,7 +22,8 @@ namespace SubMailTest
             submail.SetSubject("发送历史与明细");
             submail.SetText("发送历史与明细");
             submail.AddAttachment(@"C:\attachment.txt");
-          
+            submail.SetAsynchronous(true);
+
             string resultMessage = string.Empty ;
             if (submail.Send(out resultMessage)== false)
             {

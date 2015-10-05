@@ -108,6 +108,13 @@ namespace Submail.Utility
                     continue;
                 }
 
+                bool? boolValue = dataPair[key] as bool?;
+                if (boolValue != null)
+                {
+                    multipart.Add(new StringContent(boolValue.Value ? "true" : "false"), key);
+                    continue;
+                }
+
                 FileInfo file = dataPair[key] as FileInfo;
                 if (file != null)
                 {

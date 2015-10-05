@@ -24,6 +24,7 @@ namespace Submail.Lib
         private const string LINKS = "links";
         private const string ATTACHMENTS = "attachments";
         private const string HEADERS = "headers";
+        private const string ASYNC = "asynchronous";
 
         public MailSend(IAppConfig appConfig) : base(appConfig)
         {
@@ -53,6 +54,11 @@ namespace Submail.Lib
         public void SetReply(string reply)
         {
             this._dataPair.Add(REPLY, reply);
+        }
+
+        public void SetAsynchronous(bool isAsync)
+        {
+            this._dataPair.Add(ASYNC, isAsync);
         }
 
         public void AddCc(string address, string name)
